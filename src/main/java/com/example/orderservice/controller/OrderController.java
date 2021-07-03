@@ -42,9 +42,9 @@ public class OrderController {
         ModelMapper mapper = new ModelMapper();
         mapper.getConfiguration().setMatchingStrategy(MatchingStrategies.STRICT);
 
-        OrderDto ordderDto = mapper.map(orderDetails, OrderDto.class);
-        ordderDto.setUserId(userId);
-        OrderDto createdOrder = orderService.createOrder(ordderDto);
+        OrderDto orderDto = mapper.map(orderDetails, OrderDto.class);
+        orderDto.setUserId(userId);
+        OrderDto createdOrder = orderService.createOrder(orderDto);
 
         ResponseOrder responseOrder = mapper.map(createdOrder, ResponseOrder.class);
 
